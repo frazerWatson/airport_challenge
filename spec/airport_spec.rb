@@ -4,7 +4,7 @@ require 'plane'
 describe Airport do
   it 'lands a plane' do
   plane = Plane.new	
-  expect(subject.land(plane)).to eq 'Plane landed safely.'
+  expect(subject.land(plane, destination)).to eq 'Plane landed safely at #{destination}.'
   end
   
   it 'plane takes off' do

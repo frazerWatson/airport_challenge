@@ -1,8 +1,9 @@
 require_relative 'plane'
+require_relative 'weather'
 
 class Airport
 
-attr_accessor :plane
+attr_accessor :plane 
 
 def initialize
   @planes = []
@@ -15,9 +16,9 @@ def takeoff
 end
 
 def land(plane)
-  raise'Airport full.' if @planes.count == 10	
+  raise'Airport full.' if @planes.count >= 10	
   @planes << plane
-  'Plane landed safely.'
+  "Plane landed safely at #{destination}."
 end
 
 
