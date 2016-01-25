@@ -4,7 +4,7 @@ require 'plane'
 describe Airport do
   it 'lands a plane' do
   plane = Plane.new	
-  expect(subject.land(plane, destination)).to eq 'Plane landed safely at #{destination}.'
+  expect(subject.land(plane)).to eq 'Plane landed safely at.'
   end
   
   it 'plane takes off' do
@@ -12,12 +12,12 @@ describe Airport do
   end
 
   it 'raises an error if there are no planes' do
-  	expect {subject.takeoff}.to raise_error 'All planes taken off.'
+  	expect {subject.takeoff}.to raise_error 'All planes have taken off.'
   end
 
     describe '#land' do 
     	it 'raises an error when full' do
-    	10.times { subject.land Plane.new}
+    	5.times { subject.land Plane.new}
     	expect {subject.land Plane.new }.to raise_error 'Airport full.'
     end
 end
